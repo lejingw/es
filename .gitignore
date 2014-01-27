@@ -5,3 +5,11 @@
 target/
 *.iml
 .idea/
+
+common/.externalToolBuilders/
+web/.externalToolBuilders/
+web/src/main/webapp/WEB-INF/classes/
+web/src/main/webapp/WEB-INF/lib/
+web/src/main/webapp/upload/
+web/work/
+web/.tomcatplugin
