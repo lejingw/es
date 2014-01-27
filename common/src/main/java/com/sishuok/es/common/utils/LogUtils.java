@@ -66,7 +66,7 @@ public class LogUtils {
 
     /**
      * 记录页面错误
-     * 错误日志记录 [page/eception][username][statusCode][errorMessage][servletName][uri][exceptionName][ip][exception]
+     * 错误日志记录 [page/exception][username][statusCode][errorMessage][servletName][uri][exceptionName][ip][exception]
      *
      * @param request
      */
