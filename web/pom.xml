@@ -17,6 +17,7 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
+        <!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -45,7 +46,6 @@
 					</filesets>
 				</configuration>
 			</plugin>
-        <!-- 
          -->
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -60,7 +60,7 @@
                     </webAppConfig>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-                            <port>9090</port>
+                            <port>9080</port>
                             <!--<maxIdleTime>60000</maxIdleTime>-->
                         </connector>
                     </connectors>
@@ -89,15 +89,12 @@
                         </systemProperty>
                     </systemProperties>
                 </configuration>
-
             </plugin>
-
-
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>native2ascii-maven-plugin</artifactId>
-                <version>1.0-alpha-1</version>
+                <version>1.0-beta-1</version>
                 <executions>
                     <execution>
                         <phase>generate-resources</phase>
@@ -108,11 +105,11 @@
                             <encoding>UTF-8</encoding>
                             <src>src/main/messages</src>
                             <dest>target/${project.artifactId}/WEB-INF/classes</dest>
-                            <includes>**/*.*</includes>
+                            <includes><include>**/*.*</include></includes>
                         </configuration>
                     </execution>
                 </executions>
-                <!-- native2ascii 使用的tools.jar -->
+                <!-- native2ascii 使用的tools.jar
                 <dependencies>
                     <dependency>
                         <groupId>com.sun</groupId>
@@ -121,8 +118,9 @@
                         <scope>system</scope>
                         <systemPath>${java.home}/../lib/tools.jar</systemPath>
                     </dependency>
-                </dependencies>
+                </dependencies> -->
             </plugin>
+
             <plugin>
                 <groupId>com.googlecode</groupId>
                 <artifactId>maven-db-plugin</artifactId>
