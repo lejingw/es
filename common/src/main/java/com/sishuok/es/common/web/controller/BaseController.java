@@ -34,7 +34,7 @@ public abstract class BaseController<M extends AbstractEntity, ID extends Serial
 
 
     protected BaseController() {
-        this.entityClass = ReflectUtils.findParameterizedType(getClass(), 0);
+        this.entityClass = ReflectUtils.<M>findParameterizedType(getClass(), 0);
         setViewPrefix(defaultViewPrefix());
     }
 
