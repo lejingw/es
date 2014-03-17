@@ -96,8 +96,8 @@ public class SysUserFilter extends AccessControlFilter {
         }
 
         if (Boolean.TRUE.equals(user.getDeleted()) || user.getStatus() == UserStatus.blocked) {
-            getSubject(request, response).logout();
-            saveRequestAndRedirectToLogin(request, response);
+//            getSubject(request, response).logout();
+//            saveRequestAndRedirectToLogin(request, response);
             return false;
         }
         return true;
