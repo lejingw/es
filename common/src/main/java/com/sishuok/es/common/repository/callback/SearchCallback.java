@@ -19,7 +19,6 @@ public interface SearchCallback {
     public static final SearchCallback NONE = new NoneSearchCallback();
     public static final SearchCallback DEFAULT = new DefaultSearchCallback();
 
-
     /**
      * 动态拼HQL where、group by having
      *
