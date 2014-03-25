@@ -29,8 +29,7 @@ import java.io.Serializable;
  * <p>Date: 13-2-23 下午1:20
  * <p>Version: 1.0
  */
-public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Serializable>
-        extends BaseController<M, ID> {
+public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Serializable> extends BaseController<M, ID> {
 
     protected BaseService<M, ID> baseService;
 
@@ -68,7 +67,6 @@ public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Se
     @RequestMapping(method = RequestMethod.GET)
     @PageableDefaults(sort = "id=desc")
     public String list(Searchable searchable, Model model) {
-
         if (permissionList != null) {
             this.permissionList.assertHasViewPermission();
         }
@@ -97,7 +95,6 @@ public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Se
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String view(Model model, @PathVariable("id") M m) {
-
         if (permissionList != null) {
             this.permissionList.assertHasViewPermission();
         }
@@ -125,10 +122,8 @@ public abstract class BaseCRUDController<M extends AbstractEntity, ID extends Se
 
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public String create(
-            Model model, @Valid @ModelAttribute("m") M m, BindingResult result,
+    public String create(Model model, @Valid @ModelAttribute("m") M m, BindingResult result,
             RedirectAttributes redirectAttributes) {
-
         if (permissionList != null) {
             this.permissionList.assertHasCreatePermission();
         }

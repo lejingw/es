@@ -33,9 +33,9 @@ public class ReflectUtils {
             return null;
         }
         Type[] actualTypeArguments = ((ParameterizedType) parameterizedType).getActualTypeArguments();
-        if (actualTypeArguments == null || actualTypeArguments.length == 0) {
+        if (actualTypeArguments == null || actualTypeArguments.length <= index) {
             return null;
         }
-        return (Class<T>) actualTypeArguments[0];
+        return (Class<T>) actualTypeArguments[index];
     }
 }

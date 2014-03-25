@@ -83,7 +83,7 @@ class SimpleBaseRepositoryFactory<M, ID extends Serializable> extends JpaReposit
 
     protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
         if (isBaseRepository(metadata.getRepositoryInterface())) {
-            return SimpleBaseRepository.class;
+            return BaseRepository.class;
         }
         return super.getRepositoryBaseClass(metadata);
     }

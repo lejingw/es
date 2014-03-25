@@ -20,7 +20,14 @@
         <module>../common</module>
         <module>../web</module>
     </modules>
-
+	<repositories>
+	
+        <repository>
+            <id>springsource-repo</id>
+            <name>SpringSource Repository</name>
+            <url>http://repo.spring.io/release/</url>
+        </repository>
+    </repositories>
     <build>
         <finalName>${project.artifactId}</finalName>
         <testResources>
